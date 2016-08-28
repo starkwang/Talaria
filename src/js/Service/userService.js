@@ -19,15 +19,3 @@ var user = {
         }
     } //  需要放在export前面,否则对外接口为空.
 export default user;
-
-
-user.getUserInfo().then(res => {
-    if (res) {
-        user.userInfo = res;
-        user.isLogin = true;
-    } else {
-        user.userInfo = null;
-        user.isLogin = false;
-    }
-    eventProxy.emit("reload");
-});

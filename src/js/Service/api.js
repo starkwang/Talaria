@@ -71,11 +71,7 @@ var item = {
     },
     //拉取主页显示的商品,no params
     fetchIndexItems: params => {
-        return POST('/api/homepage_goods', {
-            limit: 6
-        }).then(result => {
-            return result.status ? result.data : null
-        })
+        return fakeRequest({}, 1000);
     },
     publish: params => POST('/api/new_good', params).then(res => res.status == 1 ? res.data : undefined)
 }

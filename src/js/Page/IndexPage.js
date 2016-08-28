@@ -28,25 +28,14 @@ const styles = {
 export default class IndexPage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            tilesData: [[]]
-        };
-        this.titles = ['手机电脑','数码家电','房屋租售','票券卡务','家居日用','图书音像','纪念品','交通工具','服饰配饰','其它'];
+        this.state = {};
     }
     componentWillMount(){
         eventProxy.emit("show loading");
         api.item.fetchIndexItems().then(res => {
-            var tiles = [];
-            for(var i = 0; i < 9; i++){
-                res[i] && tiles.push(res[i])
-            }
             this.setState({
-                isShow: true,
-                tilesData: tiles
+                isShow: true
             })
-            $('.flexslider').flexslider({
-                animation: "slide"
-            });
             eventProxy.emit("hide loading");
         })
     }
@@ -58,45 +47,7 @@ export default class IndexPage extends React.Component {
         eventProxy.emit('show header');
     }
     render() {
-        var mainInfo = this.state.isShow?(<div className="main-info">
-            <div className="flexslider">
-                <ul className="slides">
-                    <li>
-                        <img src="/img/slide0.PNG" />
-                    </li>
-                    <li>
-                        <img src="/img/slide1.PNG" />
-                    </li>
-                    <li>
-                        <img src="/img/slide2.PNG" />
-                    </li>
-                    <li>
-                        <img src="/img/slide3.PNG" />
-                    </li>
-                </ul>
-            </div>
-            {this.state.tilesData.map((category, index) => (
-                <div key={index} className="waterfall">
-                    <p className="title">{this.titles[index]}</p>
-                    <Divider className="hr"/>
-                    <GridList
-                        cellHeight={400}
-                        padding={20}
-                        cols={3}
-                        style={styles.gridList}
-                    >
-                        {category.map((tile, index) => (
-                            <GridTile
-                                key={index}
-                                containerElement={<WaterFallItem url={`/detail/${tile.goodID}`} img={tile.compressImage} name={tile.goodName} price={tile.price}/>}
-                            >
-                                <img src={tile.img} />
-                            </GridTile>
-                        ))}
-                    </GridList>
-                </div>
-            ))}
-        </div>):null;
+        var mainInfo = this.state.isShow?(<div className="main-info">mainPage</div>):null;
 
         return (
             <PageContent className="index-page">
