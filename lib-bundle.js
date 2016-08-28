@@ -1,0 +1,9 @@
+window.lib = {};
+window.lib['react'] = require('react');
+window.lib['react-tap-event-plugin'] = require('react-tap-event-plugin');
+window.lib['react-addons-css-transition-group'] = require('react-addons-css-transition-group');
+window.lib['react-dom'] = require('react-dom');
+window.lib['react-router'] = require('react-router');
+window.lib['material-ui'] = require('material-ui');
+window.lib["superagent"] = require("superagent");
+window.lib['eventproxy'] = require("eventproxy");
