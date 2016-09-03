@@ -27,14 +27,14 @@ export default class App extends React.Component {
         return (
             <MuiThemeProvider>
                 <Router history={browserHistory}>
-                    <Route path="/" component={Base}>
+                    <Route path={`/${base}`} component={Base}>
                         <IndexRoute component={IndexPage} />
-                        <Route path={`${base}test`} component={TestPage}/>
-                        <Route path={`${base}login`} component={LoginPage}/>
-                        <Route path={`${base}signup`} component={SignupPage}/>
-                        <Route path={`${base}detail/:id`} component={DetailPage}/>
-                        <Route path={`${base}publish`} component={PublishPage}/>
-                        <Route path={`${base}category/:id`} component={CategoryPage}/>
+                        <Route path='test' component={TestPage}/>
+                        <Route path='login' component={LoginPage}/>
+                        <Route path='signup' component={SignupPage}/>
+                        <Route path='detail/:id' component={DetailPage}/>
+                        <Route path='publish' component={PublishPage}/>
+                        <Route path='category/:id' component={CategoryPage}/>
                     </Route>
                 </Router>
             </MuiThemeProvider>

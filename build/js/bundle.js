@@ -133,14 +133,14 @@
 	                    { history: _reactRouter.browserHistory },
 	                    _react2.default.createElement(
 	                        _reactRouter.Route,
-	                        { path: '/', component: _Base2.default },
+	                        { path: '/' + base, component: _Base2.default },
 	                        _react2.default.createElement(_reactRouter.IndexRoute, { component: _IndexPage2.default }),
-	                        _react2.default.createElement(_reactRouter.Route, { path: base + 'test', component: _TestPage2.default }),
-	                        _react2.default.createElement(_reactRouter.Route, { path: base + 'login', component: _LoginPage2.default }),
-	                        _react2.default.createElement(_reactRouter.Route, { path: base + 'signup', component: _SignupPage2.default }),
-	                        _react2.default.createElement(_reactRouter.Route, { path: base + 'detail/:id', component: _DetailPage2.default }),
-	                        _react2.default.createElement(_reactRouter.Route, { path: base + 'publish', component: _PublishPage2.default }),
-	                        _react2.default.createElement(_reactRouter.Route, { path: base + 'category/:id', component: _CategoryPage2.default })
+	                        _react2.default.createElement(_reactRouter.Route, { path: 'test', component: _TestPage2.default }),
+	                        _react2.default.createElement(_reactRouter.Route, { path: 'login', component: _LoginPage2.default }),
+	                        _react2.default.createElement(_reactRouter.Route, { path: 'signup', component: _SignupPage2.default }),
+	                        _react2.default.createElement(_reactRouter.Route, { path: 'detail/:id', component: _DetailPage2.default }),
+	                        _react2.default.createElement(_reactRouter.Route, { path: 'publish', component: _PublishPage2.default }),
+	                        _react2.default.createElement(_reactRouter.Route, { path: 'category/:id', component: _CategoryPage2.default })
 	                    )
 	                )
 	            );
