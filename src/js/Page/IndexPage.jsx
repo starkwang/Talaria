@@ -6,6 +6,7 @@ import eventProxy from '../Service/event';
 import PageContent from '../Component/PageContent';
 import WaterFall from '../Component/WaterFall';
 import WaterFallItem from '../Component/WaterFallItem';
+import ImageGallery from 'react-image-gallery';
 import api from '../Service/api';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
@@ -18,7 +19,7 @@ const styles = {
         justifyContent: 'space-around',
     },
     gridList: {
-        width: 960, 
+        width: 960,
         height: 'auto',
         overflowY: 'auto',
         marginBottom: 24,
@@ -30,7 +31,7 @@ export default class IndexPage extends React.Component {
         super(props);
         this.state = {};
     }
-    componentWillMount(){
+    componentWillMount() {
         eventProxy.emit("show loading");
         api.item.fetchIndexItems().then(res => {
             this.setState({
@@ -39,25 +40,42 @@ export default class IndexPage extends React.Component {
             eventProxy.emit("hide loading");
         })
     }
-    componentDidMount(){
-        eventProxy.emit('change header',{
+    componentDidMount() {
+        eventProxy.emit('change header', {
             title: '闲鹅',
             color: '#17AFC6'
         });
         eventProxy.emit('show header');
     }
     render() {
-        var mainInfo = this.state.isShow?(<div className="main-info">mainPage</div>):null;
+        var galleryImage = [
+            {
+                original: 'http://lorempixel.com/1000/600/nature/1/'
+            }, {
+                original: 'http://lorempixel.com/1000/600/nature/2/'
+            }, {
+                original: 'http://lorempixel.com/1000/600/nature/3/'
+            }
+        ];
+        var mainInfo = this.state.isShow ? (
+            <div className="main-info">
+                <ImageGallery
+                    items={galleryImage}
+                    showThumbnails={false}
+                    />
+            </div>
+
+        ) : null;
 
         return (
             <PageContent className="index-page">
                 <div className="page-body">
-                    <ReactCSSTransitionGroup 
-                        component="div"  
+                    <ReactCSSTransitionGroup
+                        component="div"
                         transitionName="main-info"
                         transitionEnterTimeout={800}
                         transitionLeaveTimeout={800}
-                    >
+                        >
                         {mainInfo}
                     </ReactCSSTransitionGroup>
                 </div>

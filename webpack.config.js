@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 module.exports = {
     entry: {
-        'index': './src/js/index.js',
+        'index': './src/js/index.jsx',
         //'index': './test.js'
     },
     output: {
@@ -16,12 +16,21 @@ module.exports = {
             test: /\.css$/,
             loader: "css-loader"
         }, {
-            test: /\.js?$/,
+            test: /\.jsx$/,
             loader: 'babel-loader',
             query: {
                 presets: ['es2015', 'react']
             }
+        }, {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            query: {
+                presets: ['es2015']
+            }
         }]
+    },
+    resolve: {
+        extensions: ['', '.js', '.jsx', ]
     },
     externals: {
         'react': 'window.lib["react"]',

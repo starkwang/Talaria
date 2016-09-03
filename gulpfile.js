@@ -50,5 +50,6 @@ gulp.task('clean', function() {
 
 gulp.task('watch', function() {
     gulp.watch('src/js/*/*.js', ['webpack']);
+    gulp.watch('src/js/*/*.jsx', ['webpack']);
     gulp.watch('src/js/*.js', ['webpack']);
 });
