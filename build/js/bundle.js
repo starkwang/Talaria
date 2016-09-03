@@ -1799,7 +1799,8 @@
 	            this.setState({
 	                open: false
 	            });
-	            _reactRouter.browserHistory.push(path);
+	            var base = window.location.host == 'blog.starkwang.com' ? 'Talaria' : '';
+	            _reactRouter.browserHistory.push(base + path);
 	        }
 	    }, {
 	        key: 'render',
