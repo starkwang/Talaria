@@ -40,10 +40,8 @@ export default class SideBar extends React.Component {
         this.setState({
             open: false
         });
-        // var base = window.location.host == 'blog.starkwang.com' ? 'Talaria' : '';
-        // browserHistory.push(base + path);
-        browserHistory.push(path);
-        window.browserHistory = browserHistory;
+        var base = window.location.host == 'blog.starkwang.com' ? '/Talaria' : '';
+        browserHistory.push(base + path);
     }
     render() {
         return (
