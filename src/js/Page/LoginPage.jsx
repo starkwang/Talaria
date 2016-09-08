@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, browserHistory } from 'react-router';
-
+import { Link } from 'react-router';
+import path from '../Service/path';
 import eventProxy from '../Service/event';
 import api from '../Service/api';
 import user from '../Service/userService'
@@ -33,7 +33,7 @@ export default class LoginPage extends React.Component {
             })
     }
     back(){
-        browserHistory.push('/');
+        path.to('/');
     }
     //  处理表单
     handleUserNameChange(e){

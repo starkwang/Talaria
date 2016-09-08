@@ -8,6 +8,7 @@ import WaterFall from '../Component/WaterFall';
 import WaterFallItem from '../Component/WaterFallItem';
 import ImageGallery from 'react-image-gallery';
 import api from '../Service/api';
+import path from '../Service/path';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {GridList, GridTile, IconButton, RaisedButton, Divider} from 'material-ui';
@@ -42,7 +43,7 @@ export default class IndexPage extends React.Component {
     }
     componentDidMount() {
         eventProxy.emit('change header', {
-            title: '闲鹅',
+            title: 'header',
             color: '#17AFC6'
         });
         eventProxy.emit('show header');
@@ -50,11 +51,11 @@ export default class IndexPage extends React.Component {
     render() {
         var galleryImage = [
             {
-                original: 'http://lorempixel.com/1000/600/nature/1/'
+                original: path.parse('/static/img/banner1.jpg')
             }, {
-                original: 'http://lorempixel.com/1000/600/nature/2/'
+                original: path.parse('/static/img/banner2.jpg')
             }, {
-                original: 'http://lorempixel.com/1000/600/nature/3/'
+                original: path.parse('/static/img/banner3.jpg')
             }
         ];
         var mainInfo = this.state.isShow ? (
@@ -62,23 +63,24 @@ export default class IndexPage extends React.Component {
                 <ImageGallery
                     items={galleryImage}
                     showThumbnails={false}
+                    showBullets={true}
+                    autoPlay={true}
                     />
+                <img className="continent" src={path.parse("/static/img/index-main.jpeg")}/>
             </div>
 
         ) : null;
 
         return (
             <PageContent className="index-page">
-                <div className="page-body">
-                    <ReactCSSTransitionGroup
-                        component="div"
-                        transitionName="main-info"
-                        transitionEnterTimeout={800}
-                        transitionLeaveTimeout={800}
-                        >
-                        {mainInfo}
-                    </ReactCSSTransitionGroup>
-                </div>
+                <ReactCSSTransitionGroup
+                    component="div"
+                    transitionName="main-info"
+                    transitionEnterTimeout={800}
+                    transitionLeaveTimeout={800}
+                    >
+                    {mainInfo}
+                </ReactCSSTransitionGroup>
             </PageContent>
         );
     }

@@ -51,10 +51,19 @@ body {
         width: 50px !important;
         height: 50px !important;
     }
+    .header-left{
+        position: absolute;
+        left: 50px;
+        top:15px;
+    }
+    .header-right{
+        position: absolute;
+        right: 10px;
+    }
 }
 
 .page-content {
-    padding-top: 64px;
+    padding-top: 24px;
 }
 
 .page-content-enter,
@@ -90,6 +99,9 @@ body {
             height: 500px;
             overflow: hidden;
         }
+    }
+    .continent{
+        width: 100%;
     }
     .waterfall {
         display: flex;

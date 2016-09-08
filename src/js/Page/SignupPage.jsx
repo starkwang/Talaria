@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, browserHistory } from 'react-router';
-
+import { Link } from 'react-router';
+import path from '../Service/path';
 import eventProxy from '../Service/event';
 import api from '../Service/api';
 import PageContent from '../Component/PageContent';
@@ -23,11 +23,11 @@ export default class SignupPage extends React.Component {
         eventProxy.emit('hide header');
     }
     back(){
-        browserHistory.push('/');
+        path.to('/');
     }
 
     toLogin(){
-        browserHistory.push('/login');
+        path.to('/login');
     }
     //  处理表单
     handleUserNameChange(e){
@@ -88,7 +88,7 @@ export default class SignupPage extends React.Component {
             }, 1000);
             switch(res.status){
                 case 1:{ // 登陆成功
-                    browserHistory.push('/login');
+                    path.to('/login');
                     break;
                 }
                 default:{

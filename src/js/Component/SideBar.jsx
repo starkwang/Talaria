@@ -1,8 +1,7 @@
 import React from 'react';
 import componentStatus from '../Service/componentStatus';
 import eventProxy from '../Service/event';
-import { browserHistory } from 'react-router';
-
+import path from '../Service/path';
 import { Drawer, MenuItem, Divider, Subheader } from 'material-ui';
 import IndexIcon from 'material-ui/svg-icons/action/home';
 import LoginIcon from 'material-ui/svg-icons/action/perm-identity';
@@ -36,12 +35,11 @@ export default class SideBar extends React.Component {
             });
         })
     }
-    toRoute(path){
+    toRoute(route){
         this.setState({
             open: false
         });
-        var base = window.location.host == 'blog.starkwang.com' ? '/Talaria' : '';
-        browserHistory.push(base + path);
+        path.to(route);
     }
     render() {
         return (

@@ -1,10 +1,14 @@
 import React from 'react';
-import { AppBar, Avatar, IconMenu, MenuItem, IconButton, Divider } from 'material-ui';
+import { FlatButton, TextField, FontIcon, RaisedButton, AppBar, Avatar, IconMenu, MenuItem, IconButton, Divider } from 'material-ui';
 
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import Person from 'material-ui/svg-icons/action/perm-identity';
 import Shop from 'material-ui/svg-icons/action/shopping-cart';
 import Logout from 'material-ui/svg-icons/action/power-settings-new';
+import AccountCircle from 'material-ui/svg-icons/action/account-circle';
+import Favorite from 'material-ui/svg-icons/action/favorite';
+import Mail from 'material-ui/svg-icons/maps/local-post-office';
+
 import { browserHistory } from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import componentStatus from '../Service/componentStatus';
@@ -50,10 +54,6 @@ export default class Header extends React.Component {
     render() {
         var header = componentStatus.Header.isShow() ? (
             <AppBar
-                title={'header'}
-                titleStyle={{
-                    paddingLeft: '55px'
-                }}
                 key={1}
                 className="header"
                 style={{
@@ -62,8 +62,33 @@ export default class Header extends React.Component {
                 }}
                 onLeftIconButtonTouchTap={this.showSideBar}
                 >
-                <div>Login</div>
-                <div>Login</div>
+                <div className='header-left'>
+                    <FlatButton
+                        label="Login"
+                        primary={true}
+                        icon={<AccountCircle/>}
+                        style={{ color: '#fff' }}
+                        rippleColor='#000'
+                        />
+                    <FlatButton
+                        primary={true}
+                        icon={<Favorite/>}
+                        style={{ color: '#fff', width: '50px', minWidth: 'none' }}
+                        rippleColor='#000'
+                        />
+                    <FlatButton
+                        primary={true}
+                        icon={<Mail/>}
+                        style={{ color: '#fff', width: '50px', minWidth: 'none' }}
+                        rippleColor='#000'
+                        />
+                </div>
+                <div className='header-right'>
+                    <TextField
+                        hintText="search"
+                        underlineFocusStyle={{ color: '#fff' }}
+                        />
+                </div>
             </AppBar>
         ) : null;
         return (
