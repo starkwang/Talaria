@@ -6,12 +6,13 @@ import eventProxy from '../Service/event';
 import PageContent from '../Component/PageContent';
 import WaterFall from '../Component/WaterFall';
 import WaterFallItem from '../Component/WaterFallItem';
+import Footer from '../Component/Footer';
 import ImageGallery from 'react-image-gallery';
 import api from '../Service/api';
 import path from '../Service/path';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import {GridList, GridTile, IconButton, RaisedButton, Divider} from 'material-ui';
+import {GridList, GridTile, IconButton, RaisedButton, Divider, Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 const styles = {
     root: {
@@ -66,7 +67,50 @@ export default class IndexPage extends React.Component {
                     showBullets={true}
                     autoPlay={true}
                     />
-                <img className="continent" src={path.parse("/static/img/index-main.jpeg")}/>
+                <h1 className="choose-title">Choose a Continent</h1>
+                <img className="continent" src={path.parse("/static/img/index-main.jpeg") }/>
+
+                <div className="card-collection">
+                    <Card className="card">
+                        <CardMedia>
+                            <img src={path.parse("/static/img/index-main.jpeg") } />
+                        </CardMedia>
+                        <CardTitle title="Card title" subtitle="Card subtitle" />
+                        <CardText>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Donec mattis pretium massa.Aliquam erat volutpat.Nulla facilisi.
+                            Donec vulputate interdum sollicitudin.Nunc lacinia auctor quam sed pellentesque.
+                            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+                        </CardText>
+                    </Card>
+
+                    <Card className="card">
+                        <CardMedia>
+                            <img src={path.parse("/static/img/index-main.jpeg") } />
+                        </CardMedia>
+                        <CardTitle title="Card title" subtitle="Card subtitle" />
+                        <CardText>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Donec mattis pretium massa.Aliquam erat volutpat.Nulla facilisi.
+                            Donec vulputate interdum sollicitudin.Nunc lacinia auctor quam sed pellentesque.
+                            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+                        </CardText>
+                    </Card>
+
+                    <Card className="card">
+                        <CardMedia>
+                            <img src={path.parse("/static/img/index-main.jpeg") } />
+                        </CardMedia>
+                        <CardTitle title="Card title" subtitle="Card subtitle" />
+                        <CardText>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Donec mattis pretium massa.Aliquam erat volutpat.Nulla facilisi.
+                            Donec vulputate interdum sollicitudin.Nunc lacinia auctor quam sed pellentesque.
+                            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+                        </CardText>
+                    </Card>
+                </div>
+                <Footer/>
             </div>
 
         ) : null;

@@ -49,23 +49,20 @@ export default class SideBar extends React.Component {
                 open={this.state.open}
                 onRequestChange={(open) => this.setState({open})}
             >
-                <Subheader>导航</Subheader>
-                <MenuItem onTouchTap={_ => this.toRoute('/')} leftIcon={<IndexIcon/>}>主页</MenuItem>
-                <MenuItem onTouchTap={_ => this.toRoute('/login')} leftIcon={<LoginIcon/>}>登录</MenuItem>
-                <MenuItem onTouchTap={_ => this.toRoute('/signup')} leftIcon={<SignupIcon/>}>注册</MenuItem>
-                <MenuItem onTouchTap={_ => this.toRoute('/publish')} leftIcon={<PublishIcon/>}>发布商品</MenuItem>
+                <Subheader>Section</Subheader>
+                <MenuItem onTouchTap={_ => this.toRoute('/')} leftIcon={<IndexIcon/>}>Index</MenuItem>
+                <MenuItem onTouchTap={_ => this.toRoute('/login')} leftIcon={<LoginIcon/>}>Login</MenuItem>
+                <MenuItem onTouchTap={_ => this.toRoute('/signup')} leftIcon={<SignupIcon/>}>Signup</MenuItem>
                 <Divider/>
-                <Subheader>商品分类</Subheader>
-                <MenuItem onTouchTap={_ => this.toRoute('/category/0')} leftIcon={<CategoryIcon0/>}>手机电脑</MenuItem>
-                <MenuItem onTouchTap={_ => this.toRoute('/category/1')} leftIcon={<CategoryIcon1/>}>数码家电</MenuItem>
-                <MenuItem onTouchTap={_ => this.toRoute('/category/2')} leftIcon={<CategoryIcon2/>}>房屋租售</MenuItem>
-                <MenuItem onTouchTap={_ => this.toRoute('/category/3')} leftIcon={<CategoryIcon3/>}>票券卡务</MenuItem>
-                <MenuItem onTouchTap={_ => this.toRoute('/category/4')} leftIcon={<CategoryIcon4/>}>家居日用</MenuItem>
-                <MenuItem onTouchTap={_ => this.toRoute('/category/5')} leftIcon={<CategoryIcon5/>}>图书音像</MenuItem>
-                <MenuItem onTouchTap={_ => this.toRoute('/category/6')} leftIcon={<CategoryIcon6/>}>纪念品</MenuItem>
-                <MenuItem onTouchTap={_ => this.toRoute('/category/7')} leftIcon={<CategoryIcon7/>}>交通工具</MenuItem>
-                <MenuItem onTouchTap={_ => this.toRoute('/category/8')} leftIcon={<CategoryIcon8/>}>服饰配饰</MenuItem>
-                <MenuItem onTouchTap={_ => this.toRoute('/category/9')} leftIcon={<CategoryIcon9/>}>其它</MenuItem>
+                <Subheader>Section</Subheader>
+                <MenuItem leftIcon={<CategoryIcon0/>}>Item</MenuItem>
+                <MenuItem leftIcon={<CategoryIcon1/>}>Item</MenuItem>
+                <MenuItem leftIcon={<CategoryIcon2/>}>Item</MenuItem>
+                <MenuItem leftIcon={<CategoryIcon3/>}>Item</MenuItem>
+                <MenuItem leftIcon={<CategoryIcon4/>}>Item</MenuItem>
+                <MenuItem leftIcon={<CategoryIcon5/>}>Item</MenuItem>
+                <MenuItem leftIcon={<CategoryIcon6/>}>Item</MenuItem>
+                <MenuItem onTouchTap={_ => this.toRoute('/category/7')} leftIcon={<CategoryIcon7/>}>Item</MenuItem>
                 <Divider/>
             </Drawer>
         )

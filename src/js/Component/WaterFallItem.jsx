@@ -12,7 +12,7 @@ export default class WaterFallItem extends React.Component {
                     <CardMedia>
                         <img src={this.props.img}/>
                     </CardMedia>
-                    <CardTitle title={this.props.name} subtitle={'￥' + this.props.price} subtitleStyle={{color:"#EF5350"}}/>
+                    <CardTitle title={this.props.name} subtitle={'￥' + this.props.price}/>
                 </Link>
             </Card>
         );
